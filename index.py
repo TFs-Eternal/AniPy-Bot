@@ -99,5 +99,5 @@ async def character(ctx, *, charName):
     embed = charSearch(charName)
     await ctx.send(embed=embed)
 
-
+keep_alive()
 client.run(TOKEN, bot=True)
