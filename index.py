@@ -9,6 +9,9 @@ from commands.searchCharacter import charSearch
 from misc.help import helpMessage
 from commands.searchUser import *
 from config import token, prefix
+import os, import webserver
+from webserver import keep_alive
+TOKEN = os.getenv("Tokn")
 
 client = commands.Bot(command_prefix=prefix)
 client.remove_command('help')
@@ -97,4 +100,4 @@ async def character(ctx, *, charName):
     await ctx.send(embed=embed)
 
 
-client.run(token)
+client.run(TOKEN, bot=True)
